@@ -1,0 +1,153 @@
+<!DOCTYPEhtml >
+
+< html  lang =" es " >
+
+< cabeza >
+
+  < juego de caracteres meta  =" utf-8 " >
+
+  < título > </ título >
+
+  < estilo >
+
+      cuerpo {
+
+        color de fondo : azul claro;
+
+        alineación de texto : centro;
+
+      }
+
+      
+
+      . anillo lds {
+
+  pantalla : bloque en línea;
+
+  posición : relativa;
+
+  ancho :  80 píxeles ;
+
+  altura :  80 píxeles ;
+
+}
+
+. lds-anillo  div {
+
+  tamaño de caja : cuadro de borde;
+
+  pantalla : bloque;
+
+  posición : absoluta;
+
+  ancho :  64 píxeles ;
+
+  altura :  64 píxeles ;
+
+  margen :  8 px ;
+
+  borde :  8 px sólido #fff ; _
+
+  borde-radio :  50 % ;
+
+  animación : lds-ring 1.2 s  cubic-bezier ( 0.5 ,  0 ,  0.5 ,  1 ) infinito;
+
+  border-color :  # fff transparente transparente transparente;
+
+}
+
+. lds-ring  div : nth-child ( 1 ) {
+
+  animación-retraso :  -0.45 s ;
+
+}
+
+. lds-ring  div : nth-child ( 2 ) {
+
+  animación-retraso :  -0.3 s ;
+
+}
+
+. lds-ring  div : nth-child ( 3 ) {
+
+  animación-retraso :  -0.15 s ;
+
+}
+
+@keyframes lds-anillo {
+
+  0 % {
+
+    transformar :  rotar ( 0 grados );
+
+  }
+
+  100 % {
+
+    transformar :  rotar ( 360 grados );
+
+  }
+
+}
+
+
+
+
+  </ estilo >
+
+</ cabeza >
+
+< cuerpo >
+
+  < guión >
+
+    const  AS_URL_BASE  =  “https://script.google.com/macros/s/AKfycbyLKtoAArCfb0VInuvnrM65ACP1S_deUaTgTZnC4CAQG795gIkWbxgEOMNuAqbemdw6/exec" ;
+
+    
+
+    var  url  =  documento . ubicación _ href ;
+
+    var  k  =  URL . substr ( url . lastIndexOf ( "k=" ) + 2 ) ;
+
+    
+
+    si ( k ) {
+
+      buscar ( AS_URL_BASE + '?k=' + k )
+
+      . luego ( r  =>  r . texto ( ) )
+
+      . entonces ( ( r )  =>  {
+
+        consola _ registro ( r ) ;
+
+        //documento.escribir(r);
+
+        si ( r ) {
+
+          documento _ ubicación _ reemplazar ( r ) ;
+
+        }
+
+      } )
+
+      . catch ( err  =>  consola . log ( err ) )
+
+    }
+
+
+
+
+  </ guión >
+
+  
+
+  < div  class =" lds-ring " > < div > </ div > < div > < / div > < div > < / div > < div > </ div > </ div >
+
+  
+
+  
+
+</ cuerpo >
+
+</html> _ _
